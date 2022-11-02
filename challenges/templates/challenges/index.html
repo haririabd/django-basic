@@ -1,0 +1,20 @@
+<!-- prettier-ignore -->
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'challenges/challenges.css' %}" />
+{% endblock %}
+<!-- prettier-ignore -->
+{% block page_title %} All Challenges {% endblock %} 
+{% block content %}
+<h1>All Challenges</h1>
+<ul>
+  {% for months in month %}
+  <li>
+    <a href="{% url 'month-challenge' months %}">{{ months | title }}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
